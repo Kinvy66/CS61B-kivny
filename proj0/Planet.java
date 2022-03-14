@@ -15,7 +15,7 @@ public class Planet {
     public double mass;       //Its mass
     public String imgFileName;
 
-    public final double G = 6.67e-11;
+    private final double G = 6.67e-11;
 
     public Planet(double xP, double yP, double xV, double yV, double mass, String img) {
         this.xxPos = xP;
@@ -27,7 +27,12 @@ public class Planet {
     }
 
     public Planet(Planet p) {
-
+        this.xxPos = p.xxPos;
+        this.yyPos = p.yyPos;
+        this.xxVel = p.xxVel;
+        this.yyVel = p.yyVel;
+        this.mass = p.mass;
+        this.imgFileName = p.imgFileName;
     }
 
     /**

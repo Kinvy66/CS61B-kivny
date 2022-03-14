@@ -58,7 +58,7 @@ public class NBody {
     public static double readRadius(String filename) {
         In in = new In(filename);
 
-        //int firstItemInFile = in.readInt();
+        int firstItemInFile = in.readInt();
         double secondItemInFile = in.readDouble();
         //String thirdItemInFile = in.readString();
         //String fourthItemInFile = in.readString();
