@@ -21,7 +21,7 @@ public class IntListTest {
     }
 
     @Test
-    public void testdSquareList() {
+    public void testDSquareList() {
         IntList L = IntList.of(1, 2, 3);
         IntList.dSquareList(L);
         assertEquals(IntList.of(1, 4, 9), L);
@@ -65,5 +65,6 @@ public class IntListTest {
         assertEquals(exp, IntList.catenate(A, B));
         assertEquals(IntList.of(1, 2, 3), A);
     }
+
 
 }

@@ -1,4 +1,6 @@
+import javax.swing.text.html.InlineView;
 import java.util.Formatter;
+import java.util.SortedMap;
 
 /**
  * A naked recursive list of integers, similar to what we saw in lecture 3, but
@@ -81,8 +83,15 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
+        if (A == null) {
+            return B;
+        }
+        IntList temp = A;
+        while (temp.rest != null){
+            temp = temp.rest;
+        }
+        temp.rest = B;
+        return A;
     }
 
     /**
@@ -90,10 +99,30 @@ public class IntList {
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
-    }
+        //非递归
+        if(A == null) {
+            return B;
+        }
+        IntList c = new IntList();      // 创建一个新的list
+        IntList hA = A;
+        IntList hC = c;               //保存c的头节点
+        while (hA != null) {
+            IntList temp = new IntList(hA.first, null);
+            while (hC.rest != null) {    //
+                hC = hC.rest;
+            }
+            hC.rest = temp;
+            hA = hA.rest;
+        }
+        hC.rest.rest = B;
+        return c.rest;
 
+        //递归
+        /*if (A == null) {
+            return  B;
+        }
+        return new IntList(A.first, catenate(A.rest, B));*/
+    }
 
 
 
