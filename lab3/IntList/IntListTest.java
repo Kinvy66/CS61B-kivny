@@ -74,9 +74,7 @@ public class IntListTest {
     public void testReverse() {
         IntList myList = IntList.of(0, 1, 2, 3);
         IntList myList2 = IntList.of(3, 2, 1, 0);
-        IntList reverseList =  IntList.reverse(myList);
-        assertEquals(reverseList, myList2);
-
+        assertEquals(myList2,IntList.reverse(myList));
     }
 
 }
